@@ -1,11 +1,11 @@
 # diophantine
 
-Tables for
+The main tables are **cubes on the left**:
 
 ```
-a^k + b^k = c^k + d^k          same exponent
-a^j + b^j = c^k + d^k          two exponents (Wagstaff, Ulas)
-a^A + b^B = c^C + d^D          mixed: variable exponents
+x^3 ± y^3 = a^k + b^k
 ```
 
-See [results/](results/) for the files and the known counts.
+for k = 4, 5, 6, 7 (Wagstaff, Ulas, and extensions). Mixed is variable exponents, `a^A + b^B = c^C + d^D`.
+
+See [results/](results/) for the files and the published counts.

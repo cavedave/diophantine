@@ -1,31 +1,19 @@
-# Equal sums of like powers
+# x³ ± y³ = aᵏ + bᵏ
 
-Two classical questions, then a mixed-exponent search.
+The tables here are this equation: **left side cubes**, right side two k-th powers. k is 4, 5, 6, or 7 in the named files. Mixed is the same idea with every exponent allowed to vary.
 
-## Same exponent: `a^k + b^k = c^k + d^k`
+## Files (left side always cubes)
 
-Primitive solutions (`gcd(a,b,c,d)=1`, `{a,b} ≠ {c,d}`):
+| file | equation | bound | n |
+|------|----------|-------|--:|
+| `k4_x3y3_eq_a4b4_M1e7.csv` | X^3 + Y^3 = A^4 + B^4 | A,B ≤ 10^7, sum, primitive | 7629 |
+| `k5_x3y3_eq_c5d5_M1e6.csv` | X^3 + Y^3 = C^5 + D^5 | C,D ≤ 10^6, sum, primitive | 216 |
+| `k6_x3y3_eq_c6d6_M5e5.csv` | X^3 + Y^3 = C^6 + D^6 | C,D ≤ 5·10^5, sum, primitive | 69 |
+| `k7_x3minusy3_eq_c7d7.csv` | X^3 − Y^3 = C^7 + D^7 | one recorded instance | 1 |
 
-| k | what is known |
-|---|---|
-| 2 | infinitely many (sums of two squares) |
-| 3 | infinitely many (taxicab numbers; Hardy–Wright) |
-| 4 | infinitely many; parametric families exist. Wroblewski listed the primitives with bases ≤ 10^14 |
-| ≥ 5 | no primitive solution known. Guy (D1): searches for k=5 at least to N < 10^25. Fermat’s Last Theorem rules out a zero term |
+k=4,5,6: gcd of the four bases is 1; parametric trivial families excluded (`X = C^{k/3}` when 3 divides k, and the like). k=6 sits on Wagstaff’s borderline `2/3 + 2/6 = 1`. k=7 is `1250534^3 − 637445^3 = 402^7 + 51^7`.
 
-These are *equal sums of like powers*. The tables below are not this equation.
-
-## Two exponents: `a^j + b^j = c^k + d^k`
-
-Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), studies `2 < j < k`. The density heuristic (birthday / Erdős–Ulam) says:
-
-- `2/j + 2/k > 1` — expect many primitives
-- `= 1` — borderline
-- `< 1` — expect finitely many, perhaps none
-
-Wagstaff found primitives only for `(j,k) = (3,4), (3,5), (3,6)` among `2 < j < k < 11`. Ulas, [On the Diophantine equation `x^3 ± y^3 = a^k ± b^k`](https://arxiv.org/abs/2402.06567), pushed the `j=3` searches further (both signs).
-
-Published counts we reproduce, then the files here:
+Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), studied `a^j + b^j = c^k + d^k` for `2 < j < k`. The density heuristic says many primitives when `2/j + 2/k > 1`, a few when equal to 1, and finitely many (perhaps none) when less. For `j=3` that is k=4 and 5 many, k=6 borderline, k≥7 sparse. He found primitives only for `(j,k) = (3,4), (3,5), (3,6)` among `2 < j < k < 11`. Ulas, [On the Diophantine equation `x^3 ± y^3 = a^k ± b^k`](https://arxiv.org/abs/2402.06567), pushed the cube searches further (both signs).
 
 | source | k | M | sum | diff |
 |--------|--:|--:|----:|-----:|
@@ -37,25 +25,22 @@ Published counts we reproduce, then the files here:
 | Ulas | 6 | 5·10^4 | 28 | 83 |
 | Ulas | 7 | 5·10^4 | 0 | 1 |
 
-## Files (`j = 3`)
-
-| file | equation | bound | n |
-|------|----------|-------|--:|
-| `k4_x3y3_eq_a4b4_M1e7.csv` | X^3 + Y^3 = A^4 + B^4 | A,B ≤ 10^7, sum, primitive | 7629 |
-| `k5_x3y3_eq_c5d5_M1e6.csv` | X^3 + Y^3 = C^5 + D^5 | C,D ≤ 10^6, sum, primitive | 216 |
-| `k6_x3y3_eq_c6d6_M5e5.csv` | X^3 + Y^3 = C^6 + D^6 | C,D ≤ 5·10^5, sum, primitive | 69 |
-| `k7_x3minusy3_eq_c7d7.csv` | X^3 − Y^3 = C^7 + D^7 | one recorded instance | 1 |
-
-k=4,5,6: gcd of the four bases is 1; parametric trivial families excluded (`a = c^{k/3}` when 3 divides k, and the like). k=6 sits on Wagstaff’s borderline `2/3 + 2/6 = 1`. k=7 is the Ulas instance `1250534^3 − 637445^3 = 402^7 + 51^7`.
-
 ## Mixed: variable exponents
 
-`a^A + b^B = c^C + d^D` with each exponent in `2..8` and bases ≤ 1000. This is not a fixed k; A,B,C,D may all differ.
+`a^A + b^B = c^C + d^D` with each exponent in `2..8` and bases ≤ 1000. No side is fixed to cubes.
 
 | file | n |
 |------|--:|
 | `mixed_grid_M1000.csv` | 45436 |
 
-Raw collisions were 96,332. This file keeps one writing per identity: each term is reduced to the least exponent in `2..8` (`d^4 → (d^2)^2`, `8^2 → 2^6` the other way, and so on), then drops rows that become *same-k* on both sides (`a^2+b^2 = c^2+d^4` is just two squares). gcd=1 and no single term equal to a term on the other side.
+Raw collisions were 96,332. This file keeps one writing per identity: each term is reduced to the least exponent in `2..8`, then drops rows that become the same shape on both sides (`a^2+b^2 = c^2+d^4` is just two squares). gcd=1 and no single term equal to a term on the other side.
 
-Most of the 45,436 are still the dense families (`σ = 1/A+1/B+1/C+1/D > 1`), especially `a^2+b^2 = c^2+d^3`. The sparse `σ < 1` rows are the interesting residue; they have not been separated yet.
+Most of the 45,436 are still the dense families (`σ = 1/A+1/B+1/C+1/D > 1`), especially `a^2+b^2 = c^2+d^3`. The sparse `σ < 1` rows have not been separated yet.
+
+## Aside: same exponent on all four terms
+
+A different equation, not what these files solve:
+
+`a^k + b^k = c^k + d^k` with `gcd=1` and `{a,b} ≠ {c,d}`.
+
+Infinitely many primitives for k=2 (two squares), k=3 (taxicab / Hardy–Wright), and k=4 (parametric; Wroblewski listed bases ≤ 10^14). **No primitive solution is known for any k≥5.** Guy (D1): k=5 has been searched at least to N < 10^25. Fermat’s Last Theorem is the special case with a zero term.
