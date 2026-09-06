@@ -8,7 +8,7 @@ The tables here are this equation: **left side cubes**, right side two k-th powe
 |------|----------|-------|--:|
 | `k4_x3y3_eq_a4b4_M1e7.csv` | X^3 + Y^3 = A^4 + B^4 | A,B ≤ 10^7, sum, primitive | 7629 |
 | `k5_x3y3_eq_c5d5_M1e6.csv` | X^3 + Y^3 = C^5 + D^5 | C,D ≤ 10^6, sum, primitive | 216 |
-| `k6_x3y3_eq_c6d6_M5e5.csv` | X^3 + Y^3 = C^6 + D^6 | C,D ≤ 5·10^5, sum, primitive | 69 |
+| `k6_x3y3_eq_c6d6_M1e6.csv` | X^3 + Y^3 = C^6 + D^6 | C,D ≤ 10^6, sum, primitive | 91 |
 | `k7_x3minusy3_eq_c7d7.csv` | X^3 − Y^3 = C^7 + D^7 | one recorded instance | 1 |
 
 k=4,5,6: gcd of the four bases is 1; parametric trivial families excluded (`X = C^{k/3}` when 3 divides k, and the like). k=6 sits on Wagstaff’s borderline `2/3 + 2/6 = 1`. k=7 is `1250534^3 − 637445^3 = 402^7 + 51^7`.
