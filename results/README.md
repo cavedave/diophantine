@@ -7,11 +7,12 @@ The tables here are this equation: **left side cubes**, right side two k-th powe
 | file | equation | bound | n |
 |------|----------|-------|--:|
 | `k4_x3y3_eq_a4b4_M1e7.csv` | X^3 + Y^3 = A^4 + B^4 | A,B ≤ 10^7, sum, primitive | 7629 |
+| `k4_x3minusy3_eq_a4b4_M1e6.csv` | X^3 − Y^3 = A^4 + B^4 | A,B ≤ 10^6, diff, primitive | 3207 |
 | `k5_x3y3_eq_c5d5_M1e6.csv` | X^3 + Y^3 = C^5 + D^5 | C,D ≤ 10^6, sum, primitive | 216 |
 | `k6_x3y3_eq_c6d6_M1e6.csv` | X^3 + Y^3 = C^6 + D^6 | C,D ≤ 10^6, sum, primitive | 91 |
 | `k7_x3minusy3_eq_c7d7.csv` | X^3 − Y^3 = C^7 + D^7 | one recorded instance | 1 |
 
-k=4,5,6: gcd of the four bases is 1; parametric trivial families excluded (`X = C^{k/3}` when 3 divides k, and the like). k=6 sits on Wagstaff’s borderline `2/3 + 2/6 = 1`. k=7 is `1250534^3 − 637445^3 = 402^7 + 51^7`.
+k=4,5,6: gcd of the four bases is 1; parametric trivial families excluded (`X = C^{k/3}` when 3 divides k, and the like). k=6 sits on Wagstaff’s borderline `2/3 + 2/6 = 1`. The k=4 difference table contains Ulas’s 648 at \(M=10^5\) and continues to \(M=10^6\). k=7 is `1250534^3 − 637445^3 = 402^7 + 51^7`.
 
 Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), studied `a^j + b^j = c^k + d^k` for `2 < j < k`. The density heuristic says many primitives when `2/j + 2/k > 1`, a few when equal to 1, and finitely many (perhaps none) when less. For `j=3` that is k=4 and 5 many, k=6 borderline, k≥7 sparse. He found primitives only for `(j,k) = (3,4), (3,5), (3,6)` among `2 < j < k < 11`. Ulas, [On the Diophantine equation `x^3 ± y^3 = a^k ± b^k`](https://arxiv.org/abs/2402.06567), pushed the cube searches further (both signs).
 
