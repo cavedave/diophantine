@@ -36,11 +36,3 @@ Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journ
 Raw collisions were 96,332. This file keeps one writing per identity: each term is reduced to the least exponent in `2..8`, then drops rows that become the same shape on both sides (`a^2+b^2 = c^2+d^4` is just two squares). gcd=1 and no single term equal to a term on the other side.
 
 Most of the 45,436 are still the dense families (`σ = 1/A+1/B+1/C+1/D > 1`), especially `a^2+b^2 = c^2+d^3`. The sparse `σ < 1` rows have not been separated yet.
-
-## Aside: same exponent on all four terms
-
-A different equation, not what these files solve:
-
-`a^k + b^k = c^k + d^k` with `gcd=1` and `{a,b} ≠ {c,d}`.
-
-Infinitely many primitives for k=2 (two squares), k=3 (taxicab / Hardy–Wright), and k=4 (parametric; Wroblewski listed bases ≤ 10^14). **No primitive solution is known for any k≥5.** Guy (D1): k=5 has been searched at least to N < 10^25. Fermat’s Last Theorem is the special case with a zero term.
