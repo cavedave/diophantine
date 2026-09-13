@@ -14,7 +14,7 @@ Left side two cubes, right side two *k*-th powers. Primitive: gcd of the four ba
 
 | k | equation | bound | n |
 |--:|----------|-------|--:|
-| 4 | X³ + Y³ = A⁴ + B⁴ | A, B ≤ 3×10⁷, sum | [15777](results/k4_x3y3_eq_a4b4_M3e7.csv) |
+| 4 | X³ + Y³ = A⁴ + B⁴ | A, B ≤ 5×10⁷, sum | [22209](results/k4_x3y3_eq_a4b4_M5e7.csv) |
 | 4 | X³ − Y³ = A⁴ + B⁴ | A, B ≤ 10⁶, diff | [3207](results/k4_x3minusy3_eq_a4b4_M1e6.csv) |
 | 5 | X³ + Y³ = C⁵ + D⁵ | C, D ≤ 2×10⁶, sum | [272](results/k5_x3y3_eq_c5d5_M2e6.csv) |
 | 5 | X³ − Y³ = C⁵ + D⁵ | C, D ≤ 10⁶, diff | [403](results/k5_x3minusy3_eq_c5d5_M1e6.csv) |
@@ -25,7 +25,7 @@ Left side two cubes, right side two *k*-th powers. Primitive: gcd of the four ba
 | 9 | X³ ± Y³ = A⁹ + B⁹ | A, B ≤ 4000, both signs | [11](results/k9_x3y3_eq_a9b9_M4000.csv) |
 | 15 | X³ − Y³ = A¹⁵ + B¹⁵ | A, B ≤ 100 | [1](results/k15_x3minusy3_eq_a15b15_M100.csv) |
 
-k=4 sums through 3×10⁷ include the published 7629 at 10⁷. k=7 is 1250534³ − 637445³ = 402⁷ + 51⁷ (Ulas); not a complete *M*-census. k=8 is a finished empty search. k=9 is thin: 9 through *M* = 1000, then one more in (1000, 2000] and one in (2000, 4000].
+k=4 sums through 5×10⁷ include the published 7629 at 10⁷. k=7 is 1250534³ − 637445³ = 402⁷ + 51⁷ (Ulas); not a complete *M*-census. k=8 is a finished empty search. k=9 is thin: 9 through *M* = 1000, then one more in (1000, 2000] and one in (2000, 4000].
 
 CSV columns: `X,Y,A,B,sign` with X ≥ Y, A ≥ B, and `sign` `+` or `−`. The k=7 file uses `X,Y,C,D`.
 
@@ -42,7 +42,7 @@ The density heuristic says many primitives when 2/3 + 2/*k* > 1 (k=4, 5), a few 
 | Ulas | 5 | 5×10⁴ | 56 | 99 |
 | Ulas | 6 | 5×10⁴ | 28 | 83 |
 | Ulas | 7 | 5×10⁴ | 0 | 1 |
-| this repo | 4 | 3×10⁷ | 15777 | — |
+| this repo | 4 | 5×10⁷ | 22209 | — |
 | this repo | 4 | 10⁶ | — | 3207 |
 | this repo | 5 | 2×10⁶ | 272 | — |
 | this repo | 5 | 10⁶ | — | 403 |
