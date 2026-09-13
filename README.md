@@ -60,6 +60,10 @@ a<sup>A</sup> + b<sup>B</sup> = c<sup>C</sup> + d<sup>D</sup> with each exponent
 
 Raw collisions were 96,332. What σ is, and the two σ < 1 identities, are in [mixedgrid.md](mixedgrid.md).
 
+## Hardware
+
+Calculations took place on an AMD Ryzen Threadripper 3970X (32 cores / 64 threads), 256 GB RAM, Ubuntu 20.04. In September 2026 over weekends.
+
 ---
 
 (6,1,5)-type searches (equal sums of sixth powers) live in a separate project: [cavedave/six-one-five](https://github.com/cavedave/six-one-five).
