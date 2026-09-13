@@ -1,39 +1,57 @@
 # x³ ± y³ = aᵏ + bᵏ
 
-The tables here are this equation: **left side cubes**, right side two k-th powers. k is 4, 5, 6, or 7 in the named files. Mixed is the same idea with every exponent allowed to vary.
+Left side two cubes, right side two k-th powers. Primitive: gcd of the four bases is 1. The trivial family `X = A^{k/3}`, `Y = B^{k/3}` is dropped when `3 | k`.
 
-## Files (left side always cubes)
+## Census files
 
 | file | equation | bound | n |
 |------|----------|-------|--:|
-| `k4_x3y3_eq_a4b4_M1e7.csv` | X^3 + Y^3 = A^4 + B^4 | A,B ≤ 10^7, sum, primitive | 7629 |
-| `k4_x3minusy3_eq_a4b4_M1e6.csv` | X^3 − Y^3 = A^4 + B^4 | A,B ≤ 10^6, diff, primitive | 3207 |
-| `k5_x3y3_eq_c5d5_M1e6.csv` | X^3 + Y^3 = C^5 + D^5 | C,D ≤ 10^6, sum, primitive | 216 |
-| `k6_x3y3_eq_c6d6_M1e6.csv` | X^3 + Y^3 = C^6 + D^6 | C,D ≤ 10^6, sum, primitive | 91 |
-| `k7_x3minusy3_eq_c7d7.csv` | X^3 − Y^3 = C^7 + D^7 | one recorded instance | 1 |
+| `k4_x3y3_eq_a4b4_M3e7.csv` | X³ + Y³ = A⁴ + B⁴ | A,B ≤ 3·10⁷, sum | 15777 |
+| `k4_x3minusy3_eq_a4b4_M1e6.csv` | X³ − Y³ = A⁴ + B⁴ | A,B ≤ 10⁶, diff | 3207 |
+| `k5_x3y3_eq_c5d5_M2e6.csv` | X³ + Y³ = C⁵ + D⁵ | C,D ≤ 2·10⁶, sum | 272 |
+| `k5_x3minusy3_eq_c5d5_M1e6.csv` | X³ − Y³ = C⁵ + D⁵ | C,D ≤ 10⁶, diff | 403 |
+| `k6_x3y3_eq_c6d6_M1e6.csv` | X³ + Y³ = C⁶ + D⁶ | C,D ≤ 10⁶, sum | 91 |
+| `k6_x3minusy3_eq_c6d6_M1e6.csv` | X³ − Y³ = C⁶ + D⁶ | C,D ≤ 10⁶, diff | 240 |
+| `k7_x3minusy3_eq_c7d7.csv` | X³ − Y³ = C⁷ + D⁷ | one recorded instance | 1 |
+| `k8_x3y3_eq_a8b8_M3e4.csv` | X³ ± Y³ = A⁸ + B⁸ | A,B ≤ 3·10⁴, both signs | 0 |
+| `k9_x3y3_eq_a9b9_M4000.csv` | X³ ± Y³ = A⁹ + B⁹ | A,B ≤ 4000, both signs | 11 |
+| `k15_x3minusy3_eq_a15b15_M100.csv` | X³ − Y³ = A¹⁵ + B¹⁵ | A,B ≤ 100 | 1 |
 
-k=4,5,6: gcd of the four bases is 1; parametric trivial families excluded (`X = C^{k/3}` when 3 divides k, and the like). k=6 sits on Wagstaff’s borderline `2/3 + 2/6 = 1`. The k=4 difference table contains Ulas’s 648 at \(M=10^5\) and continues to \(M=10^6\). k=7 is `1250534^3 − 637445^3 = 402^7 + 51^7`.
+k=4 sums through 3·10⁷ include the published 7629 at 10⁷. k=7 is `1250534³ − 637445³ = 402⁷ + 51⁷` (Ulas); not a complete M-census. k=8 is a finished empty search. k=9 is thin: 9 through M=1000, then one more in (1000,2000] and one in (2000,4000].
 
-Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), studied `a^j + b^j = c^k + d^k` for `2 < j < k`. The density heuristic says many primitives when `2/j + 2/k > 1`, a few when equal to 1, and finitely many (perhaps none) when less. For `j=3` that is k=4 and 5 many, k=6 borderline, k≥7 sparse. He found primitives only for `(j,k) = (3,4), (3,5), (3,6)` among `2 < j < k < 11`. Ulas, [On the Diophantine equation `x^3 ± y^3 = a^k ± b^k`](https://arxiv.org/abs/2402.06567), pushed the cube searches further (both signs).
+CSV columns: `X,Y,A,B,sign` with `X ≥ Y`, `A ≥ B`, `sign` `+` or `−`. The k=7 file uses `X,Y,C,D`.
+
+## Published checkpoints
+
+Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022). Ulas, [On the Diophantine equation x³ ± y³ = aᵏ ± bᵏ](https://arxiv.org/abs/2402.06567).
+
+The density heuristic says many primitives when `2/3 + 2/k > 1` (k=4,5), a few when equal to 1 (k=6), and finitely many when less (k ≥ 7).
 
 | source | k | M | sum | diff |
 |--------|--:|--:|----:|-----:|
-| Wagstaff | 4 | 10^4 | 75 | — |
+| Wagstaff | 4 | 10⁴ | 75 | — |
 | Wagstaff | 5 | 5000 | 14 | — |
 | Wagstaff | 6 | 1400 | 7 | — |
-| Ulas | 4 | 10^5 | 355 | 648 |
-| Ulas | 5 | 5·10^4 | 56 | 99 |
-| Ulas | 6 | 5·10^4 | 28 | 83 |
-| Ulas | 7 | 5·10^4 | 0 | 1 |
+| Ulas | 4 | 10⁵ | 355 | 648 |
+| Ulas | 5 | 5·10⁴ | 56 | 99 |
+| Ulas | 6 | 5·10⁴ | 28 | 83 |
+| Ulas | 7 | 5·10⁴ | 0 | 1 |
+| this repo | 4 | 3·10⁷ | 15777 | — |
+| this repo | 4 | 10⁶ | — | 3207 |
+| this repo | 5 | 2·10⁶ | 272 | — |
+| this repo | 5 | 10⁶ | — | 403 |
+| this repo | 6 | 10⁶ | 91 | 240 |
+| this repo | 9 | 4000 | 3 | 8 |
 
 ## Mixed: variable exponents
 
-`a^A + b^B = c^C + d^D` with each exponent in `2..8` and bases ≤ 1000. No side is fixed to cubes.
+`a^A + b^B = c^C + d^D` with each exponent in 2..8 and bases ≤ 1000. No side is fixed to cubes.
 
 | file | n |
 |------|--:|
 | `mixed_grid_M1000.csv` | 45436 |
+| `mixed_grid_sigma_lt1.csv` | 2 |
 
-Raw collisions were 96,332. This file keeps one writing per identity: each term is reduced to the least exponent in `2..8`, then drops rows that become the same shape on both sides (`a^2+b^2 = c^2+d^4` is just two squares). gcd=1 and no single term equal to a term on the other side.
+Raw collisions were 96,332. The big file keeps one writing per identity: each term is reduced to the least exponent in 2..8, then drops rows that become the same shape on both sides (`a²+b² = c²+d⁴` is just two squares). gcd=1 and no single term equal to a term on the other side.
 
-Most of the 45,436 are still the dense families (`σ = 1/A+1/B+1/C+1/D > 1`), especially `a^2+b^2 = c^2+d^3`. The sparse `σ < 1` rows have not been separated yet.
+What σ is, and the two σ<1 identities, are in [mixedgrid.md](mixedgrid.md).

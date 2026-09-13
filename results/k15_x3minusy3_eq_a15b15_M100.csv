@@ -1,0 +1,4 @@
+# primitive nontrivial: X^3 +- Y^3 = A^15 + B^15, X>=Y, A>=B, gcd=1
+# pair-factor census  k=15  M=100
+# X,Y,A,B,sign
+3436,3405,4,3,-
