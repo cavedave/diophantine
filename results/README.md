@@ -9,6 +9,7 @@ Left side two cubes, right side two k-th powers. Primitive: gcd of the four base
 | `k4_x3y3_eq_a4b4_M3e7.csv` | X³ + Y³ = A⁴ + B⁴ | A,B ≤ 3·10⁷, sum | 15777 |
 | `k4_x3minusy3_eq_a4b4_M1e6.csv` | X³ − Y³ = A⁴ + B⁴ | A,B ≤ 10⁶, diff | 3207 |
 | `k5_x3y3_eq_c5d5_M2e6.csv` | X³ + Y³ = C⁵ + D⁵ | C,D ≤ 2·10⁶, sum | 272 |
+| `k5_x3minusy3_eq_c5d5_M1e6.csv` | X³ − Y³ = C⁵ + D⁵ | C,D ≤ 10⁶, diff | 403 |
 | `k6_x3y3_eq_c6d6_M1e6.csv` | X³ + Y³ = C⁶ + D⁶ | C,D ≤ 10⁶, sum | 91 |
 | `k6_x3minusy3_eq_c6d6_M1e6.csv` | X³ − Y³ = C⁶ + D⁶ | C,D ≤ 10⁶, diff | 240 |
 | `k7_x3minusy3_eq_c7d7.csv` | X³ − Y³ = C⁷ + D⁷ | one recorded instance | 1 |
@@ -16,7 +17,7 @@ Left side two cubes, right side two k-th powers. Primitive: gcd of the four base
 | `k9_x3y3_eq_a9b9_M4000.csv` | X³ ± Y³ = A⁹ + B⁹ | A,B ≤ 4000, both signs | 11 |
 | `k15_x3minusy3_eq_a15b15_M100.csv` | X³ − Y³ = A¹⁵ + B¹⁵ | A,B ≤ 100 | 1 |
 
-k=4 sums through 3·10⁷ include the published 7629 at 10⁷. k=5 diffs to 10⁶ (403 primitives) are not in this folder yet. k=7 is `1250534³ − 637445³ = 402⁷ + 51⁷` (Ulas); not a complete M-census. k=8 is a finished empty search. k=9 is thin: 9 through M=1000, then one more in (1000,2000] and one in (2000,4000].
+k=4 sums through 3·10⁷ include the published 7629 at 10⁷. k=7 is `1250534³ − 637445³ = 402⁷ + 51⁷` (Ulas); not a complete M-census. k=8 is a finished empty search. k=9 is thin: 9 through M=1000, then one more in (1000,2000] and one in (2000,4000].
 
 CSV columns: `X,Y,A,B,sign` with `X ≥ Y`, `A ≥ B`, `sign` `+` or `−`. The k=7 file uses `X,Y,C,D`.
 
@@ -38,6 +39,7 @@ The density heuristic says many primitives when `2/3 + 2/k > 1` (k=4,5), a few w
 | this repo | 4 | 3·10⁷ | 15777 | — |
 | this repo | 4 | 10⁶ | — | 3207 |
 | this repo | 5 | 2·10⁶ | 272 | — |
+| this repo | 5 | 10⁶ | — | 403 |
 | this repo | 6 | 10⁶ | 91 | 240 |
 | this repo | 9 | 4000 | 3 | 8 |
 
@@ -52,19 +54,4 @@ The density heuristic says many primitives when `2/3 + 2/k > 1` (k=4,5), a few w
 
 Raw collisions were 96,332. The big file keeps one writing per identity: each term is reduced to the least exponent in 2..8, then drops rows that become the same shape on both sides (`a²+b² = c²+d⁴` is just two squares). gcd=1 and no single term equal to a term on the other side.
 
-### What σ is
-
-`σ = 1/A + 1/B + 1/C + 1/D` is the sum of the **reciprocals of the four exponents**, not of the bases. It is the same density count as Wagstaff’s `2/j + 2/k`.
-
-A random integer of size about `B` is a sum of two `e`-th powers with probability about `B^{2/e − 1}`. Four exponents collide when `σ > 1`. So:
-
-- **σ > 1** — expect many solutions (almost all 45,436 rows; the bulk is `a²+b² = c²+d³`, where `σ = 11/6`).
-- **σ = 1** — borderline.
-- **σ < 1** — expect finitely many.
-
-Only two reduced identities in the M=1000 box have `σ < 1` (both `σ = 1/2 + 1/5 + 2/7 = 0.9857…`):
-
-```
-42² + 7⁵ = 3⁷ + 4⁷ = 18571
-72² + 2⁷ = 5⁵ + 3⁷ = 5312
-```
+What σ is, and the two σ<1 identities, are in [mixedgrid.md](mixedgrid.md).
