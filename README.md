@@ -6,7 +6,7 @@ What solutions exist for
 x³ ± y³ = aᵏ ± bᵏ
 ```
 
-This calculation is based on work by Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), and Ulas, [On the Diophantine equation x³ ± y³ = aᵏ ± bᵏ](https://arxiv.org/abs/2402.06567).
+This calculation is based on work by Wagstaff, [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), and Ulas, [On the Diophantine equation x³ ± y³ = aᵏ ± bᵏ](https://arxiv.org/abs/2402.06567), published in [proceedings of the american mathematical society](https://apacz.matinf.uj.edu.pl/czasopisma/233488-proceedings_of_the_american_mathematical_society) 2026.
 
 Left side two cubes, right side two *k*-th powers. Primitive: gcd of the four bases is 1. The trivial family X = A<sup>k/3</sup>, Y = B<sup>k/3</sup> is dropped when 3 divides *k*. CSVs live in [results/](results/).
 
@@ -71,4 +71,4 @@ Calculations took place on an AMD Ryzen Threadripper 3970X (32 cores / 64 thread
 ## References
 
 1. S. S. Wagstaff, Jr., [Equal Sums of Two Distinct Like Powers](https://cs.uwaterloo.ca/journals/JIS/VOL25/Wagstaff/wagstaff8.html), *J. Integer Sequences* **25** (2022), Article 22.8.2.
-2. M. Ulas, [On the Diophantine equation x³ ± y³ = aᵏ ± bᵏ](https://arxiv.org/abs/2402.06567), arXiv:2402.06567 (2024).
+2. M. Ulas, [On the Diophantine equation x³ ± y³ = aᵏ ± bᵏ](https://arxiv.org/abs/2402.06567), published in [proceedings of the american mathematical society](https://apacz.matinf.uj.edu.pl/czasopisma/233488-proceedings_of_the_american_mathematical_society) 2026.
