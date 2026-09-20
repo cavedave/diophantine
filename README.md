@@ -16,7 +16,7 @@ Left side two cubes, right side two *k*-th powers. Primitive: gcd of the four ba
 |--:|----------|-------|--:|
 | 4 | X³ + Y³ = A⁴ + B⁴ | A, B ≤ 5×10⁷, sum | [22209](results/k4_x3y3_eq_a4b4_M5e7.csv) |
 | 4 | X³ − Y³ = A⁴ + B⁴ | A, B ≤ 10⁷, diff | [15027](results/k4_x3minusy3_eq_a4b4_M1e7.csv) |
-| 5 | X³ + Y³ = C⁵ + D⁵ | C, D ≤ 6×10⁶, sum | [411](results/k5_x3y3_eq_c5d5_M6e6.csv) |
+| 5 | X³ + Y³ = C⁵ + D⁵ | C, D ≤ 7×10⁶, sum | [433](results/k5_x3y3_eq_c5d5_M7e6.csv) |
 | 5 | X³ − Y³ = C⁵ + D⁵ | C, D ≤ 10⁶, diff | [403](results/k5_x3minusy3_eq_c5d5_M1e6.csv) |
 | 6 | X³ + Y³ = C⁶ + D⁶ | C, D ≤ 10⁶, sum | [91](results/k6_x3y3_eq_c6d6_M1e6.csv) |
 | 6 | X³ − Y³ = C⁶ + D⁶ | C, D ≤ 10⁶, diff | [240](results/k6_x3minusy3_eq_c6d6_M1e6.csv) |
@@ -25,7 +25,7 @@ Left side two cubes, right side two *k*-th powers. Primitive: gcd of the four ba
 | 9 | X³ ± Y³ = A⁹ + B⁹ | A, B ≤ 4000, both signs | [11](results/k9_x3y3_eq_a9b9_M4000.csv) |
 | 15 | X³ − Y³ = A¹⁵ + B¹⁵ | A, B ≤ 100 | [1](results/k15_x3minusy3_eq_a15b15_M100.csv) |
 
-k=4 sums through 5×10⁷ include the published 7629 at 10⁷. k=4 diffs through 10⁷ include the published 3207 at 10⁶. k=5 sums through 6×10⁶ include the 272 at 2×10⁶, the 336 at 3.5×10⁶, and the 370 at 4.5×10⁶. k=7 is 1250534³ − 637445³ = 402⁷ + 51⁷ (Ulas); not a complete *M*-census. k=8 is a finished empty search. k=9 is thin: 9 through *M* = 1000, then one more in (1000, 2000] and one in (2000, 4000].
+k=4 sums through 5×10⁷ include the published 7629 at 10⁷. k=4 diffs through 10⁷ include the published 3207 at 10⁶. k=5 sums through 7×10⁶ include the 272 at 2×10⁶, the 336 at 3.5×10⁶, the 370 at 4.5×10⁶, and the 411 at 6×10⁶. k=7 is 1250534³ − 637445³ = 402⁷ + 51⁷ (Ulas); not a complete *M*-census. k=8 is a finished empty search. k=9 is thin: 9 through *M* = 1000, then one more in (1000, 2000] and one in (2000, 4000].
 
 CSV columns: `X,Y,A,B,sign` with X ≥ Y, A ≥ B, and `sign` `+` or `−`. The k=7 file uses `X,Y,C,D`.
 
@@ -48,6 +48,7 @@ The density heuristic says many primitives when 2/3 + 2/*k* > 1 (k=4, 5), a few 
 | this repo | 5 | 3.5×10⁶ | 336 | — |
 | this repo | 5 | 4.5×10⁶ | 370 | — |
 | this repo | 5 | 6×10⁶ | 411 | — |
+| this repo | 5 | 7×10⁶ | 433 | — |
 | this repo | 5 | 10⁶ | — | 403 |
 | this repo | 6 | 10⁶ | 91 | 240 |
 | this repo | 9 | 4000 | 3 | 8 |
